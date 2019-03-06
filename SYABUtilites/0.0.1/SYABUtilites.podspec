@@ -30,7 +30,17 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'SYABUtilites/Classes/**/*'
+  s.subspec 'Macro' do |macro|
+    macro.source_files = 'SYABUtilites/Classes/Macro/*.{swift}'
+  end
+  
+  s.subspec 'UIApplication' do |application|
+    application.source_files = 'SYABUtilites/Classes/UIApplication/*.{swift}'
+  end
+  
+  s.subspec 'UIDevice' do |device|
+    device.source_files = 'SYABUtilites/Classes/UIDevice/*.{swift}'
+  end
   
   # s.resource_bundles = {
   #   'SYABUtilites' => ['SYABUtilites/Assets/*.png']
