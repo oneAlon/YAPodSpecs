@@ -29,14 +29,34 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
-
-  s.source_files = 'SYABBaseViewController/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'SYABBaseViewController' => ['SYABBaseViewController/Assets/*.png']
-  # }
+  s.dependency 'SYABNetwork'
+  s.dependency 'MJRefresh'
+  s.dependency 'SYABUtilites'
+  s.dependency 'SYABasicUIKit'
+  s.dependency 'RTRootNavigationController'
+  s.dependency 'WebViewJavascriptBridge'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'BaseNavigationController' do |baseNavigationController|
+    baseNavigationController.source_files = 'SYABBaseViewController/Classes/BaseNavigationController/*.{swift}'
+  end
+  
+  s.subspec 'BaseTabBarController' do |baseTabBarController|
+    baseTabBarController.source_files = 'SYABBaseViewController/Classes/BaseTabBarController/*.{swift}'
+  end
+  
+  s.subspec 'BaseTableViewController' do |baseTableViewController|
+    baseTableViewController.source_files = 'SYABBaseViewController/Classes/BaseTableViewController/*.{swift}'
+    baseTableViewController.dependency 'SYABBaseViewController/BaseViewController'
+  end
+  
+  s.subspec 'BaseViewController' do |baseViewController|
+    baseViewController.source_files = 'SYABBaseViewController/Classes/BaseViewController/*.{swift}'
+  end
+  
+  s.subspec 'BaseWebViewController' do |baseWebViewController|
+    baseWebViewController.source_files = 'SYABBaseViewController/Classes/BaseWebViewController/*.{swift}'
+    baseWebViewController.dependency 'SYABBaseViewController/BaseViewController'
+  end
+  
 end
