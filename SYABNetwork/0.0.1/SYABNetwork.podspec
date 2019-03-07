@@ -29,21 +29,11 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
-
-  s.source_files = 'SYABNetwork/Classes/**/*'
   
   s.dependency 'Alamofire'
   s.dependency 'ReachabilitySwift'
   s.dependency 'SYABFoundation'
   s.dependency 'HandyJSON'
-  
-  # s.resource_bundles = {
-  #   'SYABNetwork' => ['SYABNetwork/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
   
   s.subspec 'Manager' do |manager|
     manager.source_files = 'SYABNetwork/Classes/Manager/*.{swift}'
