@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'SYABFoundation/Classes/**/*'
+  # s.source_files = 'SYABFoundation/Classes/**/*'
   
   # s.resource_bundles = {
   #   'SYABFoundation' => ['SYABFoundation/Assets/*.png']
@@ -39,4 +39,30 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+  s.subspec 'Array' do |array|
+    array.source_files = 'SYABFoundation/Classes/Array/*.{swift}'
+    array.dependency 'SYABFoundation/String'
+  end
+
+  s.subspec 'Data' do |data|
+    data.source_files = 'SYABFoundation/Classes/Data/*.{swift}'
+  end
+
+  s.subspec 'Date' do |date|
+    date.source_files = 'SYABFoundation/Classes/Date/*.{swift}'
+  end
+
+  s.subspec 'Dictionary' do |dictionary|
+    dictionary.source_files = 'SYABFoundation/Classes/Dictionary/*.{swift}'
+  end
+
+  s.subspec 'NotificationCenter' do |notificationCenter|
+    notificationCenter.source_files = 'SYABFoundation/Classes/NotificationCenter/*.{swift}'
+  end
+
+  s.subspec 'String' do |string|
+    string.source_files = 'SYABFoundation/Classes/String/*.{swift}'
+  end
+
 end
